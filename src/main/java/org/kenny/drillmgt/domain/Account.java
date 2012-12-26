@@ -23,12 +23,12 @@ public class Account implements Serializable {
 	@Column
 	private String loginName;
 	/*
-	 * ÃÜÂë
+	 * å¯†ç 
 	 */
 	@Column
 	private String password;
 	/*
-	 * ÓÃ»§Ãû
+	 * ç”¨æˆ·å
 	 */
 	@Column
 	private String username;
@@ -45,40 +45,40 @@ public class Account implements Serializable {
 	private Dept dept;
 
 	/*
-	 * ÉÏ´ÎµÇÂ¼Ê±¼ä
+	 * ä¸Šæ¬¡ç™»å½•æ—¶é—´
 	 */
 	@Column
 	private Date lastLoginTime;
 	/*
-	 * ±¾´ÎµÇÂ¼Ê±¼ä
+	 * æœ¬æ¬¡ç™»å½•æ—¶é—´
 	 */
 	@Column
 	private Date loginTime;
 	/*
-	 * ÉÏ´ÎµÇÂ¼IP
+	 * ä¸Šæ¬¡ç™»å½•IP
 	 */
 	@Column
 	private String lastLoginIp;
 	/*
-	 * ±¾´ÎµÇÂ¼IP
+	 * æœ¬æ¬¡ç™»å½•IP
 	 */
 	@Column
 	private String loginIp;
 
 	/*
-	 * µÇÂ¼´ÎÊı
+	 * ç™»å½•æ¬¡æ•°
 	 */
 	@Column
 	private int logintimes;
 
 	/*
-	 * ¹ÜÀíÔ±ËùÓµÓĞµÄ½ÇÉ«ĞÅÏ¢
+	 * ç®¡ç†å‘˜æ‰€æ‹¥æœ‰çš„è§’è‰²ä¿¡æ¯
 	 */
 	@ManyMany(target = Role.class, from = "accountId", to = "roleId", relation = "t_account_role")
 	private List<Role> roles;
 
 	/*
-	 * ¹ÜÀíÔ±×´Ì¬ £¬ÆôÓÃºÍ½ûÓÃ
+	 * ç®¡ç†å‘˜çŠ¶æ€ ï¼Œå¯ç”¨å’Œç¦ç”¨
 	 */
 	@Column
 	private boolean state;

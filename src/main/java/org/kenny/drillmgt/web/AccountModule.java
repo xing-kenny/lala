@@ -42,12 +42,12 @@ public class AccountModule extends BaseModule {
 		Account a = basicDao.findByCondition(Account.class,
 				Cnd.where("loginName", "=", loginName));
 		if (null == a) {
-			req.setAttribute("error", "loginName error£°");
-			throw new Exception("loginName error£°");
+			req.setAttribute("error", "loginName errorÔºÅ");
+			throw new Exception("loginName errorÔºÅ");
 		}
 		if (!a.getPassword().equals(password)) {
-			req.setAttribute("error", "password error£°");
-			throw new Exception("password error£°");
+			req.setAttribute("error", "password errorÔºÅ");
+			throw new Exception("password errorÔºÅ");
 		}
 
 		basicDao.findLink(a, "dept");

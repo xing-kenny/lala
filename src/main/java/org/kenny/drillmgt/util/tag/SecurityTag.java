@@ -31,7 +31,7 @@ public class SecurityTag extends TagSupport {
 	}
 
 	/*
-	 * ¼ì²âÓÃ»§Ö´ĞĞÈ¨ÏŞ
+	 * æ£€æµ‹ç”¨æˆ·æ‰§è¡Œæƒé™
 	 * 
 	 * @param roles
 	 * 

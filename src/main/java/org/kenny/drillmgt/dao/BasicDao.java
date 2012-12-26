@@ -20,7 +20,7 @@ import org.nutz.ioc.loader.annotation.Inject;
 import org.nutz.ioc.loader.annotation.IocBean;
 
 /**
- * »ù±¾Êı¾İ¿â²Ù×÷Àà
+ * åŸºæœ¬æ•°æ®åº“æ“ä½œç±»
  * 
  * @author Administrator
  * 
@@ -32,39 +32,39 @@ public class BasicDao {
 	protected Dao dao;
 
 	/**
-	 * ¸ù¾İIdÉ¾³ıÊı¾İ
+	 * æ ¹æ®Idåˆ é™¤æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param id
-	 *            ³Ö¾Ã»¯Id
-	 * @return true ³É¹¦É¾³ıÒ»ÌõÊı¾İ,falseÉ¾³ıÊ§°Ü
+	 *            æŒä¹…åŒ–Id
+	 * @return true æˆåŠŸåˆ é™¤ä¸€æ¡æ•°æ®,falseåˆ é™¤å¤±è´¥
 	 */
 	public <T> boolean delById(int id, Class<T> c) {
 		return dao.delete(c, id) == 1;
 	}
 
 	/**
-	 * ¸ù¾İID²éÑ¯Ò»¸ö¶ÔÏó
+	 * æ ¹æ®IDæŸ¥è¯¢ä¸€ä¸ªå¯¹è±¡
 	 * 
 	 * @param <T>
 	 * @param id
-	 *            ³Ö¾Ã»¯Id
+	 *            æŒä¹…åŒ–Id
 	 * @param c
-	 *            Òª²éÑ¯µÄ±í
-	 * @return ²éÑ¯µ½µÄ¶ÔÏó
+	 *            è¦æŸ¥è¯¢çš„è¡¨
+	 * @return æŸ¥è¯¢åˆ°çš„å¯¹è±¡
 	 */
 	public <T> T find(int id, Class<T> c) {
 		return dao.fetch(c, id);
 	}
 
 	/**
-	 * ²éÑ¯Êı¾İ¿âÖĞµÄÈ«²¿Êı¾İ
+	 * æŸ¥è¯¢æ•°æ®åº“ä¸­çš„å…¨éƒ¨æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            ²éÑ¯µÄ±í
+	 *            æŸ¥è¯¢çš„è¡¨
 	 * @param orderby
-	 *            desc ÅÅĞòµÄÌõ¼ş
+	 *            desc æ’åºçš„æ¡ä»¶
 	 * @return List
 	 */
 	public <T> List<T> search(Class<T> c, String orderby) {
@@ -73,7 +73,7 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¸ù¾İÌõ¼ş²éÑ¯Êı¾İ¿âÖĞÂú×ãÌõ¼şµÄÊı¾İ
+	 * æ ¹æ®æ¡ä»¶æŸ¥è¯¢æ•°æ®åº“ä¸­æ»¡è¶³æ¡ä»¶çš„æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param c
@@ -86,17 +86,17 @@ public class BasicDao {
 	}
 
 	/**
-	 * ·ÖÒ³²éÑ¯±íÖĞËùÓĞÊı¾İ
+	 * åˆ†é¡µæŸ¥è¯¢è¡¨ä¸­æ‰€æœ‰æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            ²éÑ¯µÄ±í
+	 *            æŸ¥è¯¢çš„è¡¨
 	 * @param currentPage
-	 *            µ±Ç°Ò³Êı
+	 *            å½“å‰é¡µæ•°
 	 * @param pageSize
-	 *            Ã¿Ò³ÏÔÊ¾ÊıÁ¿
+	 *            æ¯é¡µæ˜¾ç¤ºæ•°é‡
 	 * @param orderby
-	 *            descÅÅĞòµÄÌõ¼ş
+	 *            descæ’åºçš„æ¡ä»¶
 	 * @return List
 	 */
 	public <T> List<T> searchByPage(Class<T> c, int currentPage, int pageSize,
@@ -107,17 +107,17 @@ public class BasicDao {
 	}
 
 	/**
-	 * ·ÖÒ³´øÌõ¼ş²éÑ¯ËùÓĞÊı¾İ
+	 * åˆ†é¡µå¸¦æ¡ä»¶æŸ¥è¯¢æ‰€æœ‰æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            ²éÑ¯µÄ±í
+	 *            æŸ¥è¯¢çš„è¡¨
 	 * @param condition
-	 *            ²éÑ¯Ìõ¼ş,ÓÃCndµÄ¾²Ì¬·½·¨¹¹Ôì
+	 *            æŸ¥è¯¢æ¡ä»¶,ç”¨Cndçš„é™æ€æ–¹æ³•æ„é€ 
 	 * @param currentPage
-	 *            µ±Ç°Ò³Âë
+	 *            å½“å‰é¡µç 
 	 * @param pageSize
-	 *            Ã¿Ò³ÏÔÊ¾µÄÊı¾İÁ¿
+	 *            æ¯é¡µæ˜¾ç¤ºçš„æ•°æ®é‡
 	 * @return List
 	 */
 	public <T> List<T> searchByPage(Class<T> c, Condition condition,
@@ -128,39 +128,39 @@ public class BasicDao {
 	}
 
 	/**
-	 * ĞŞ¸ÄÒ»ÌõÊı¾İ
+	 * ä¿®æ”¹ä¸€æ¡æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param t
-	 *            ĞŞ¸ÄÊı¾İ¿âÖĞµÄÊı¾İ
-	 * @return true ĞŞ¸Ä³É¹¦,false ĞŞ¸ÄÊ§°Ü
+	 *            ä¿®æ”¹æ•°æ®åº“ä¸­çš„æ•°æ®
+	 * @return true ä¿®æ”¹æˆåŠŸ,false ä¿®æ”¹å¤±è´¥
 	 */
 	public <T> boolean update(T t) {
 		return dao.updateIgnoreNull(t) == 1;
 	}
 
 	/**
-	 * ¸ù¾İÌõ¼şĞŞ¸ÄÖ¸¶¨Êı¾İ
+	 * æ ¹æ®æ¡ä»¶ä¿®æ”¹æŒ‡å®šæ•°æ®
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            Êı¾İ¿â±í
+	 *            æ•°æ®åº“è¡¨
 	 * @param chain
-	 *            ĞŞ¸ÄµÄÄÚÈİ
+	 *            ä¿®æ”¹çš„å†…å®¹
 	 * @param condition
-	 *            Ñ¡ÔñÌõ¼ş
-	 * @return true ³É¹¦,falseÊ§°Ü
+	 *            é€‰æ‹©æ¡ä»¶
+	 * @return true æˆåŠŸ,falseå¤±è´¥
 	 */
 	public <T> boolean update(Class<T> c, Chain chain, Condition condition) {
 		return dao.update(c, chain, condition) > 0;
 	}
 
 	/**
-	 * Ôö¼ÓÒ»ÌõÊı¾İ
+	 * å¢åŠ ä¸€æ¡æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param t
-	 * @return ·µ»ØÔö¼Óµ½Êı¾İ¿âµÄÕâÌõÊı¾İ
+	 * @return è¿”å›å¢åŠ åˆ°æ•°æ®åº“çš„è¿™æ¡æ•°æ®
 	 */
 	public <T> T save(T t) {
 		return dao.insert(t);
@@ -171,11 +171,11 @@ public class BasicDao {
 	}
 
 	/**
-	 * ²éÑ¯Êı¾İ¿âÖĞµÄÊı¾İÌõÊı
+	 * æŸ¥è¯¢æ•°æ®åº“ä¸­çš„æ•°æ®æ¡æ•°
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            ²éÑ¯µÄÊı¾İ¿â±í
+	 *            æŸ¥è¯¢çš„æ•°æ®åº“è¡¨
 	 * @return int
 	 */
 	public <T> int searchCount(Class<T> c) {
@@ -183,13 +183,13 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¸ù¾İÌõ¼ş²éÑ¯Êı¾İ¿âÖĞµÄÊı¾İÌõÊı
+	 * æ ¹æ®æ¡ä»¶æŸ¥è¯¢æ•°æ®åº“ä¸­çš„æ•°æ®æ¡æ•°
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            ²éÑ¯µÄÊı¾İ¿â±í
+	 *            æŸ¥è¯¢çš„æ•°æ®åº“è¡¨
 	 * @param condition
-	 *            Ìõ¼ş,ÓÃCndµÄ¾²Ì¬·½·¨¹¹Ôì
+	 *            æ¡ä»¶,ç”¨Cndçš„é™æ€æ–¹æ³•æ„é€ 
 	 * @return int
 	 */
 	public <T> int searchCount(Class<T> c, Condition condition) {
@@ -197,12 +197,12 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¼ÆËã×î´ó·ÖÒ³Êı
+	 * è®¡ç®—æœ€å¤§åˆ†é¡µæ•°
 	 * 
 	 * @param count
-	 *            ¼ÇÂ¼×ÜÊı
+	 *            è®°å½•æ€»æ•°
 	 * @param pageSize
-	 *            Ã¿Ò³ÏÔÊ¾¶àÉÙÊı¾İ
+	 *            æ¯é¡µæ˜¾ç¤ºå¤šå°‘æ•°æ®
 	 * @return int
 	 */
 	public int maxPageSize(int count, int pageSize) {
@@ -217,13 +217,13 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¸ù¾İ¶à¸öid ²éÑ¯Êı¾İ
+	 * æ ¹æ®å¤šä¸ªid æŸ¥è¯¢æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param ids
-	 *            Òª²éÑ¯µÄid,¶à¸öÓÃ","£¨¶ººÅ£©·Ö¸ô
+	 *            è¦æŸ¥è¯¢çš„id,å¤šä¸ªç”¨","ï¼ˆé€—å·ï¼‰åˆ†éš”
 	 * @param c
-	 *            Òª²éÑ¯µÄ±íĞÅÏ¢
+	 *            è¦æŸ¥è¯¢çš„è¡¨ä¿¡æ¯
 	 * @return List
 	 */
 	public <T> List<T> searchByIds(Class<T> c, String ids, String orderby) {
@@ -239,13 +239,13 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¸ù¾İ¶à¸öid ²éÑ¯Êı¾İ
+	 * æ ¹æ®å¤šä¸ªid æŸ¥è¯¢æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param ids
-	 *            ÕûĞÎµÄidÊı×é
+	 *            æ•´å½¢çš„idæ•°ç»„
 	 * @param c
-	 *            Òª²éÑ¯µÄ±íĞÅÏ¢
+	 *            è¦æŸ¥è¯¢çš„è¡¨ä¿¡æ¯
 	 * @return List
 	 */
 	public <T> List<T> searchByIds(Class<T> c, int[] ids, String orderby) {
@@ -258,14 +258,14 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¸ù¾İ¶à¸öidÉ¾³ıÊı¾İ
+	 * æ ¹æ®å¤šä¸ªidåˆ é™¤æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            Òª²Ù×÷µÄ±íĞÅÏ¢
+	 *            è¦æ“ä½œçš„è¡¨ä¿¡æ¯
 	 * @param ids
-	 *            ÒªÉ¾³ıµÄid,¶à¸öÓÃ","£¨¶ººÅ£©·Ö¸ô
-	 * @return true ³É¹¦,false Ê§°Ü
+	 *            è¦åˆ é™¤çš„id,å¤šä¸ªç”¨","ï¼ˆé€—å·ï¼‰åˆ†éš”
+	 * @return true æˆåŠŸ,false å¤±è´¥
 	 */
 	public <T> void deleteByIds(Class<T> c, String ids) {
 		Entity<T> entity = dao.getEntity(c);
@@ -281,11 +281,11 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¸ù¾İÌõ¼ş·µ»ØÒ»¸öÌõ¼ş
+	 * æ ¹æ®æ¡ä»¶è¿”å›ä¸€ä¸ªæ¡ä»¶
 	 * 
 	 * @param <T>
 	 * @param condition
-	 *            ²éÑ¯Ìõ¼şÓÃCnd¹¹Ôì
+	 *            æŸ¥è¯¢æ¡ä»¶ç”¨Cndæ„é€ 
 	 * @return T
 	 */
 	public <T> T findByCondition(Class<T> c, Condition condition) {
@@ -293,19 +293,19 @@ public class BasicDao {
 	}
 
 	/**
-	 * Ä£ºı·ÖÒ³²éÑ¯Êı¾İ
+	 * æ¨¡ç³Šåˆ†é¡µæŸ¥è¯¢æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            ²éÑ¯µÄÊı¾İ¿â±í
+	 *            æŸ¥è¯¢çš„æ•°æ®åº“è¡¨
 	 * @param value
-	 *            ²éÑ¯µÄ×Ö¶Î
+	 *            æŸ¥è¯¢çš„å­—æ®µ
 	 * @param orderby
-	 *            ÅÅĞòÌõ¼ş
+	 *            æ’åºæ¡ä»¶
 	 * @param currentPage
-	 *            µ±Ç°Ò³Ãæ
+	 *            å½“å‰é¡µé¢
 	 * @param pageSize
-	 *            Ò³Ãæ´óĞ¡
+	 *            é¡µé¢å¤§å°
 	 * @return List
 	 */
 	public <T> List<T> searchPageByLike(Class<T> c, String value,
@@ -334,19 +334,19 @@ public class BasicDao {
 	}
 
 	/**
-	 * Ä£ºı·ÖÒ³²éÑ¯Êı¾İ¼ÇÂ¼×ÜÊı
+	 * æ¨¡ç³Šåˆ†é¡µæŸ¥è¯¢æ•°æ®è®°å½•æ€»æ•°
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            ²éÑ¯µÄÊı¾İ¿â±í
+	 *            æŸ¥è¯¢çš„æ•°æ®åº“è¡¨
 	 * @param value
-	 *            ²éÑ¯µÄ×Ö¶Î
+	 *            æŸ¥è¯¢çš„å­—æ®µ
 	 * @param orderby
-	 *            ÅÅĞòÌõ¼ş
+	 *            æ’åºæ¡ä»¶
 	 * @param currentPage
-	 *            µ±Ç°Ò³Ãæ
+	 *            å½“å‰é¡µé¢
 	 * @param pageSize
-	 *            Ò³Ãæ´óĞ¡
+	 *            é¡µé¢å¤§å°
 	 * @return List
 	 */
 	public <T> int searchPageByLike(Class<T> c, String value) {
@@ -372,19 +372,19 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¸ù¾İÖ¸¶¨µÄ×Ö¶ÎÄ£ºı·ÖÒ³²éÑ¯Êı¾İ
+	 * æ ¹æ®æŒ‡å®šçš„å­—æ®µæ¨¡ç³Šåˆ†é¡µæŸ¥è¯¢æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            ²éÑ¯µÄ±í
+	 *            æŸ¥è¯¢çš„è¡¨
 	 * @param fieldName
-	 *            ×Ö¶ÎÃû³Æ
+	 *            å­—æ®µåç§°
 	 * @param value
-	 *            Ä£ºıÌõ¼ş
+	 *            æ¨¡ç³Šæ¡ä»¶
 	 * @param currentPage
-	 *            µ±Ç°Ò³Âë
+	 *            å½“å‰é¡µç 
 	 * @param pageSize
-	 *            Ã¿Ò³Êı¾İÁ¿
+	 *            æ¯é¡µæ•°æ®é‡
 	 * @return List
 	 */
 	public <T> List<T> searchByPageLike(Class<T> c, String fieldName,
@@ -401,19 +401,19 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¸ù¾İÖ¸¶¨µÄ×Ö¶ÎÄ£ºı·ÖÒ³²éÑ¯Êı¾İ ¼ÇÂ¼×ÜÊı
+	 * æ ¹æ®æŒ‡å®šçš„å­—æ®µæ¨¡ç³Šåˆ†é¡µæŸ¥è¯¢æ•°æ® è®°å½•æ€»æ•°
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            ²éÑ¯µÄ±í
+	 *            æŸ¥è¯¢çš„è¡¨
 	 * @param fieldName
-	 *            ×Ö¶ÎÃû³Æ
+	 *            å­—æ®µåç§°
 	 * @param value
-	 *            Ä£ºıÌõ¼ş
+	 *            æ¨¡ç³Šæ¡ä»¶
 	 * @param currentPage
-	 *            µ±Ç°Ò³Âë
+	 *            å½“å‰é¡µç 
 	 * @param pageSize
-	 *            Ã¿Ò³Êı¾İÁ¿
+	 *            æ¯é¡µæ•°æ®é‡
 	 * @return List
 	 */
 	public <T> int searchByPageLike(Class<T> c, String fieldName, String value) {
@@ -426,19 +426,19 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¸ù¾İÄ³¸öÌõ¼ş·ÖÒ³²éÑ¯Êı¾İ
+	 * æ ¹æ®æŸä¸ªæ¡ä»¶åˆ†é¡µæŸ¥è¯¢æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            ²éÑ¯µÄ±í
+	 *            æŸ¥è¯¢çš„è¡¨
 	 * @param fieldName
-	 *            Æ¥Åä×Ö¶ÎÃû
+	 *            åŒ¹é…å­—æ®µå
 	 * @param value
-	 *            Æ¥ÅäµÄÖµ
+	 *            åŒ¹é…çš„å€¼
 	 * @param currentPage
-	 *            µ±Ç°Ò³Âë
+	 *            å½“å‰é¡µç 
 	 * @param pageSize
-	 *            Ã¿Ò³Êı¾İÁ¿
+	 *            æ¯é¡µæ•°æ®é‡
 	 * @return List
 	 */
 	public <T> List<T> searchByPage(Class<T> c, String fieldName, String value,
@@ -453,13 +453,13 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¸ù¾İÖ¸¶¨Ìõ¼ş·µ»ØÒ»¸ö¶ÔÏó
+	 * æ ¹æ®æŒ‡å®šæ¡ä»¶è¿”å›ä¸€ä¸ªå¯¹è±¡
 	 * 
 	 * @param <T>
 	 * @param fileName
-	 *            Æ¥ÅäÃû³Æ
+	 *            åŒ¹é…åç§°
 	 * @param value
-	 *            Æ¥ÅäÖµ
+	 *            åŒ¹é…å€¼
 	 * @return T
 	 */
 	public <T> T findByCondition(Class<T> c, String fileName, String value) {
@@ -467,13 +467,13 @@ public class BasicDao {
 	}
 
 	/**
-	 * Ìí¼ÓÒ»ÌõÊı¾İµ½Êı¾İ¿âÖĞ£¬ ¸ÃÊı¾İ°üÀ¨¹ØÁªµÄ¶à¸öÆäËûÊı¾İ
+	 * æ·»åŠ ä¸€æ¡æ•°æ®åˆ°æ•°æ®åº“ä¸­ï¼Œ è¯¥æ•°æ®åŒ…æ‹¬å…³è”çš„å¤šä¸ªå…¶ä»–æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param t
-	 *            ²åÈëÊı¾İ¿âµÄ¶ÔÏó
+	 *            æ’å…¥æ•°æ®åº“çš„å¯¹è±¡
 	 * @param fieldName
-	 *            ¹ØÁªÊı¾İµÄ×Ö¶ÎÃû£¬Ò»°ãÎªList¶ÔÏó
+	 *            å…³è”æ•°æ®çš„å­—æ®µåï¼Œä¸€èˆ¬ä¸ºListå¯¹è±¡
 	 * @return T
 	 */
 	public <T> T saveWidth(T t, String fieldName) {
@@ -482,13 +482,13 @@ public class BasicDao {
 	}
 
 	/**
-	 * »ñÈ¡¹ØÁª¶ÔÏó
+	 * è·å–å…³è”å¯¹è±¡
 	 * 
 	 * @param <T>
 	 * @param t
-	 *            ²éÑ¯µÄ¶ÔÏó
+	 *            æŸ¥è¯¢çš„å¯¹è±¡
 	 * @param fieldName
-	 *            ¹ØÁªµÄ¶ÔÏó
+	 *            å…³è”çš„å¯¹è±¡
 	 * @return T
 	 */
 	public <T> T findLink(T t, String fieldName) {
@@ -496,13 +496,13 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¸üĞÂ×ÔÉíºÍ¹ØÁªµÄ¶ÔÏó
+	 * æ›´æ–°è‡ªèº«å’Œå…³è”çš„å¯¹è±¡
 	 * 
 	 * @param <T>
 	 * @param t
-	 *            ĞŞ¸ÄµÄ¶ÔÏó
+	 *            ä¿®æ”¹çš„å¯¹è±¡
 	 * @param fieldName
-	 *            ¹ØÁª¶ÔÏó
+	 *            å…³è”å¯¹è±¡
 	 * @return T
 	 */
 	public <T> T updateWidth(T t, String fieldName) {
@@ -510,13 +510,13 @@ public class BasicDao {
 	}
 
 	/**
-	 * ½öĞŞ¸Ä¹ØÁªµÄ¶ÔÏóµÄÊı¾İ
+	 * ä»…ä¿®æ”¹å…³è”çš„å¯¹è±¡çš„æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param t
-	 *            ²éÑ¯Ìõ¼ş
+	 *            æŸ¥è¯¢æ¡ä»¶
 	 * @param fieldName
-	 *            ĞŞ¸ÄµÄ¶ÔÏó
+	 *            ä¿®æ”¹çš„å¯¹è±¡
 	 * @return T
 	 */
 	public <T> T updateLink(T t, String fieldName) {
@@ -524,33 +524,33 @@ public class BasicDao {
 	}
 
 	/**
-	 * É¾³ı×ÔÉíºÍ¹ØÁª¶ÔÏó
+	 * åˆ é™¤è‡ªèº«å’Œå…³è”å¯¹è±¡
 	 * 
 	 * @param <T>
 	 * @param t
-	 *            É¾³ıµÄ¶ÔÏó
+	 *            åˆ é™¤çš„å¯¹è±¡
 	 * @param fieldName
-	 *            ¹ØÁªµÄ¶ÔÏó
+	 *            å…³è”çš„å¯¹è±¡
 	 */
 	public <T> void deleteWidth(T t, String fieldName) {
 		dao.deleteWith(t, fieldName);
 	}
 
 	/**
-	 * É¾³ı¹ØÁªµÄ¶ÔÏó£¬²»É¾³ı×ÔÉí
+	 * åˆ é™¤å…³è”çš„å¯¹è±¡ï¼Œä¸åˆ é™¤è‡ªèº«
 	 * 
 	 * @param <T>
 	 * @param t
-	 *            É¾³ıµÄÌõ¼ş
+	 *            åˆ é™¤çš„æ¡ä»¶
 	 * @param fieldName
-	 *            É¾³ıµÄ¹ØÁª¶ÔÏó
+	 *            åˆ é™¤çš„å…³è”å¯¹è±¡
 	 */
 	public <T> void deleteLink(T t, String fieldName) {
 		dao.deleteLinks(t, fieldName);
 	}
 
 	/**
-	 * ±£´æ¶ÔÏóµÄ¶à¶Ô¶à ¹ØÏµ
+	 * ä¿å­˜å¯¹è±¡çš„å¤šå¯¹å¤š å…³ç³»
 	 * 
 	 * @param <T>
 	 * @param t
@@ -561,7 +561,7 @@ public class BasicDao {
 	}
 
 	/**
-	 * ±£´æ¶ÔÏóµÄ¹ØÁª¹ØÏµ,²»±£´æ¶ÔÏó±¾Éí
+	 * ä¿å­˜å¯¹è±¡çš„å…³è”å…³ç³»,ä¸ä¿å­˜å¯¹è±¡æœ¬èº«
 	 * 
 	 * @param <T>
 	 * @param t
@@ -573,18 +573,18 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¸üĞÂ¶ÔÏóµÄ¶à¶Ô¶à¹ØÏµ
+	 * æ›´æ–°å¯¹è±¡çš„å¤šå¯¹å¤šå…³ç³»
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            ¸üĞÂµÄ¶ÔÏóµÄÀà
+	 *            æ›´æ–°çš„å¯¹è±¡çš„ç±»
 	 * @param fieldName
-	 *            ¸üĞÂµÄ×Ö¶ÎÃû³Æ
+	 *            æ›´æ–°çš„å­—æ®µåç§°
 	 * @param chain
-	 *            ¸üĞÂµÄÄÚÈİ
+	 *            æ›´æ–°çš„å†…å®¹
 	 * @param condition
-	 *            ¸üĞÂµÄÌõ¼ş
-	 * @return true ³É¹¦,false Ê§°Ü
+	 *            æ›´æ–°çš„æ¡ä»¶
+	 * @return true æˆåŠŸ,false å¤±è´¥
 	 */
 	public <T> boolean updateRelation(Class<T> c, String fieldName,
 			Chain chain, Condition condition) {
@@ -592,7 +592,7 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¶ÔÓÚ '@One' ºÍ '@Many'£¬¶ÔÓ¦µÄ¼ÇÂ¼½«»áÉ¾³ı ¶ø '@ManyMay' ¶ÔÓ¦µÄ×Ö¶Î£¬Ö»»áÇå³ı¹ØÁª±íÖĞµÄ¼ÇÂ¼
+	 * å¯¹äº '@One' å’Œ '@Many'ï¼Œå¯¹åº”çš„è®°å½•å°†ä¼šåˆ é™¤ è€Œ '@ManyMay' å¯¹åº”çš„å­—æ®µï¼Œåªä¼šæ¸…é™¤å…³è”è¡¨ä¸­çš„è®°å½•
 	 * 
 	 * @param <T>
 	 * @param t
@@ -604,25 +604,25 @@ public class BasicDao {
 	}
 
 	/**
-	 * ¸ù¾İÖĞ¼ä±í·ÖÒ³²éÑ¯Êı¾İ
+	 * æ ¹æ®ä¸­é—´è¡¨åˆ†é¡µæŸ¥è¯¢æ•°æ®
 	 * 
 	 * @param <T>
 	 * @param c
-	 *            ²éÑ¯Ö÷±í
+	 *            æŸ¥è¯¢ä¸»è¡¨
 	 * @param joinTabel
-	 *            ÖĞ¼ä±í
+	 *            ä¸­é—´è¡¨
 	 * @param cloumnName
-	 *            Òª»ñÈ¡ÖĞ¼ä±íµÄ×Ö¶Î
+	 *            è¦è·å–ä¸­é—´è¡¨çš„å­—æ®µ
 	 * @param condition
-	 *            ²éÑ¯Ìõ¼ş
+	 *            æŸ¥è¯¢æ¡ä»¶
 	 * @param group
-	 *            Ö÷²éÑ¯Ìõ¼ş×é
+	 *            ä¸»æŸ¥è¯¢æ¡ä»¶ç»„
 	 * @param orderby
-	 *            ÅÅĞò·½Ê½
+	 *            æ’åºæ–¹å¼
 	 * @param currentPage
-	 *            µ±Ç°Ò³Ãæ
+	 *            å½“å‰é¡µé¢
 	 * @param pageSize
-	 *            Ã¿Ò³ÏÔÊ¾Êı¾İ
+	 *            æ¯é¡µæ˜¾ç¤ºæ•°æ®
 	 * @return
 	 */
 	public <T> List<T> searchByRelation(Class<T> c, String joinTabel,
@@ -652,20 +652,20 @@ public class BasicDao {
 	}
 
 	/**
-	 * ²éÑ¯Êı¾İµÄ×ÜÊı
+	 * æŸ¥è¯¢æ•°æ®çš„æ€»æ•°
 	 * 
 	 * @param <T>
 	 * @param c
 	 * @param joinTabel
-	 *            ÖĞ¼ä±í
+	 *            ä¸­é—´è¡¨
 	 * @param cloumnName
-	 *            Òª»ñÈ¡ÖĞ¼ä±íµÄ×Ö¶Î
+	 *            è¦è·å–ä¸­é—´è¡¨çš„å­—æ®µ
 	 * @param condition
-	 *            ²éÑ¯Ìõ¼ş
+	 *            æŸ¥è¯¢æ¡ä»¶
 	 * @param group
-	 *            Ö÷²éÑ¯Ìõ¼ş×é
+	 *            ä¸»æŸ¥è¯¢æ¡ä»¶ç»„
 	 * @param orderby
-	 *            ÅÅĞò·½Ê½
+	 *            æ’åºæ–¹å¼
 	 * @return
 	 */
 	public <T> int searchCount(Class<T> c, String joinTabel, String cloumnName,
