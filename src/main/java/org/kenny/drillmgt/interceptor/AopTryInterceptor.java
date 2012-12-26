@@ -10,7 +10,7 @@ public class AopTryInterceptor extends AbstractMethodInterceptor {
 	@Override
 	public boolean beforeInvoke(Object obj, Method method, Object... args) {
 
-		System.out.println("AopTryInterceptorµÄbeforeInvoke±»µ÷ÓÃ");
+		System.out.println("AopTryInterceptorçš„beforeInvokeè¢«è°ƒç”¨");
 		for (Object o : args) {
 
 			Class<?>[] clzs = o.getClass().getInterfaces();
