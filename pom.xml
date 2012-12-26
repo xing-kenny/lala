@@ -31,7 +31,7 @@
         <configuration>
           <warName>${project.artifactId}</warName>
           <webappDirectory>${project.build.directory}/platform</webappDirectory>  
-          <warSourceDirectory>webapp</warSourceDirectory> 
+          <warSourceDirectory>Webapp</warSourceDirectory> 
         </configuration>
       </plugin>
 
