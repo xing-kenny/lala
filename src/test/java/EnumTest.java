@@ -2,17 +2,17 @@ import java.util.EnumMap;
 import java.util.EnumSet;
 
 public class EnumTest {
-	// ¶¨ÒåÒ»¸öenumÃ¶¾ÙÀàĞÍ£¬°üÀ¨Á½¸öÊµÀıON£¬OFF
+	// å®šä¹‰ä¸€ä¸ªenumæšä¸¾ç±»å‹ï¼ŒåŒ…æ‹¬ä¸¤ä¸ªå®ä¾‹ONï¼ŒOFF
 	public enum State {
 		ON, OFF
 	};
 
-	// ²âÊÔº¯Êı
+	// æµ‹è¯•å‡½æ•°
 	public static void main(String[] args) {
-		// Ö±½Ó±äÁ¿enum
+		// ç›´æ¥å˜é‡enum
 		for (State s : State.values())
 			System.out.println(s.name());
-		// switchÓëenumµÄ½áºÏÊ¹ÓÃ
+		// switchä¸enumçš„ç»“åˆä½¿ç”¨
 		State switchState = State.OFF;
 		switch (switchState) {
 		case OFF:
@@ -22,12 +22,12 @@ public class EnumTest {
 			System.out.println("ON");
 			break;
 		}
-		// EnumSetµÄÊ¹ÓÃ
+		// EnumSetçš„ä½¿ç”¨
 		EnumSet<State> stateSet = EnumSet.allOf(State.class);
 		for (State s : stateSet) {
 			System.out.println(s);
 		}
-		// EnumMapµÄÊ¹ÓÃ
+		// EnumMapçš„ä½¿ç”¨
 		EnumMap<State, String> stateMap = new EnumMap<State, String>(
 				State.class);
 		stateMap.put(State.ON, "is On");

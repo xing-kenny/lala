@@ -12,7 +12,7 @@ public enum EnumMethodTest {
 	};
 	abstract String getInfo();
 
-	// ²âÊÔ
+	// æµ‹è¯•
 	public static void main(String args[]) {
 		for (EnumMethodTest method : values()) {
 			System.out.println(method.getInfo());
