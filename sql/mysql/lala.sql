@@ -18,11 +18,11 @@ CREATE TABLE `t_dept` (
 -- ----------------------------
 -- Records of t_dept
 -- ----------------------------
-INSERT INTO `t_dept` VALUES ('100','≈‡—µ÷––ƒ');
-INSERT INTO `t_dept` VALUES ('101','—–1');
-INSERT INTO `t_dept` VALUES ('102','—–2');
-INSERT INTO `t_dept` VALUES ('103','—–3');
-INSERT INTO `t_dept` VALUES ('104','÷ π‹');
+INSERT INTO `t_dept` VALUES ('100','ÂüπËÆ≠‰∏≠ÂøÉ');
+INSERT INTO `t_dept` VALUES ('101','Á†î1');
+INSERT INTO `t_dept` VALUES ('102','Á†î2');
+INSERT INTO `t_dept` VALUES ('103','Á†î3');
+INSERT INTO `t_dept` VALUES ('104','Ë¥®ÁÆ°');
 
 -- ----------------------------
 -- Table structure for `t_account`
@@ -69,9 +69,9 @@ CREATE TABLE `t_role` (
 -- ----------------------------
 -- Records of t_role
 -- ----------------------------
-INSERT INTO `t_role` VALUES ('100','π‹¿Ì‘±');
-INSERT INTO `t_role` VALUES ('101','≈‡—µ◊È÷Ø');
-INSERT INTO `t_role` VALUES ('102','≈‡—µœ÷≥°π‹¿Ì');
+INSERT INTO `t_role` VALUES ('100','ÁÆ°ÁêÜÂëò');
+INSERT INTO `t_role` VALUES ('101','ÂüπËÆ≠ÁªÑÁªá');
+INSERT INTO `t_role` VALUES ('102','ÂüπËÆ≠Áé∞Âú∫ÁÆ°ÁêÜ');
 
 -- ----------------------------
 -- Table structure for `t_account_role`
@@ -104,8 +104,8 @@ CREATE TABLE `t_resource` (
 -- ----------------------------
 -- Records of t_resource
 -- ----------------------------
-INSERT INTO `t_resource` VALUES ('1000','≤ø√≈');
-INSERT INTO `t_resource` VALUES ('1001','»À‘±');
+INSERT INTO `t_resource` VALUES ('1000','ÈÉ®Èó®');
+INSERT INTO `t_resource` VALUES ('1001','‰∫∫Âëò');
 
 -- ----------------------------
 -- Table structure for `t_permission`
@@ -123,8 +123,8 @@ CREATE TABLE `t_permission` (
 -- ----------------------------
 -- Records of t_permission
 -- ----------------------------
-INSERT INTO `t_permission` VALUES ('2000', '≤ø√≈π‹¿Ì',null, null);
-INSERT INTO `t_permission` VALUES ('2001', '»À‘±π‹¿Ì',null, null);
+INSERT INTO `t_permission` VALUES ('2000', 'ÈÉ®Èó®ÁÆ°ÁêÜ',null, null);
+INSERT INTO `t_permission` VALUES ('2001', '‰∫∫ÂëòÁÆ°ÁêÜ',null, null);
 
 -- ----------------------------
 -- Table structure for `t_role_permission`
